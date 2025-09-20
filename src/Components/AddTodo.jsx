@@ -25,6 +25,7 @@ export default function AddTodo({ onNewItem }) {
         <input
           className="todo-date"
           type="date"
+          placeholder="Enter date"
           value={dueDate}
           onChange={(e) => setDueDate(e.target.value)}
         />
