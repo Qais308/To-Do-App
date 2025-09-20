@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Particles from "react-tsparticles";
-import AppName from "./components/AppName.jsx";
 import AddTodo from "./Components/AddTodo";
 import TodoItems from "./Components/TodoItems";
 import WelcomeMessage from "./Components/WelcomeMsg";
@@ -83,7 +82,7 @@ function App() {
 
       <div className="app-wrapper">
         <header className="app-header">
-          <AppName />
+          <div className="appName">To-Do App</div>
         </header>
 
         <main className="app-main">
