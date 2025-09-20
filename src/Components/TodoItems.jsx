@@ -5,7 +5,11 @@ export default function TodoItems({ todoItems, onDeleteClick }) {
         <div className="todo-row" key={index}>
           <div className="todo-left">
             <div className="todo-name">{item.name}</div>
-            <div className="todo-due">{item.dueDate || "-"}</div>
+            <div className="todo-due">
+              {item.dueDate
+                ? new Date(item.dueDate).toLocaleDateString()
+                : "-"}
+            </div>
           </div>
           <button
             className="delete-btn"

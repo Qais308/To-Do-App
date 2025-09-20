@@ -154,6 +154,33 @@ body {
   color: #222;
 }
 
+/* Match DatePicker input to task input */
+.todo-date {
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #222;
+  font-weight: 500;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Placeholder color */
+.todo-date::placeholder {
+  color: #888;
+}
+
+/* Responsive adjustments */
+@media (max-width: 650px) {
+  .todo-date {
+    font-size: 14px;
+    padding: 8px 10px;
+    width: 100%;
+  }
+}
+
+
 .todo-due {
   font-size: 13px;
   color: #222;       
@@ -227,10 +254,10 @@ body {
 }
 
 @media (max-width: 768px) {
-  .inputs-group,
+  /* .inputs-group,
   .todo-left {
     width: 400px;
-  }
+  } */
 
   .add-todo-form input,
   .todo-name,
@@ -251,6 +278,11 @@ body {
     gap: 10px;
     width: 100%;
     max-width: 100%;
+  }
+   .todo-date {
+    font-size: 14px;
+    padding: 8px 10px;
+    width: 100%;
   }
 
   .inputs-group {
@@ -280,7 +312,6 @@ body {
     flex-direction: column;
     gap: 10px;
   }
-
   .todo-row {
     display: flex;
     flex-direction: column;

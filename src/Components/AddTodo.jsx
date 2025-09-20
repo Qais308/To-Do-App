@@ -1,8 +1,11 @@
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css"; // <-- this is required
+
 import { useState } from "react";
 
 export default function AddTodo({ onNewItem }) {
   const [name, setName] = useState("");
-  const [dueDate, setDueDate] = useState("");
+  const [dueDate, setDueDate] = useState(null);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -22,12 +25,13 @@ export default function AddTodo({ onNewItem }) {
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-        <input
+        <DatePicker
           className="todo-date"
-          type="date"
-          placeholder="Enter date"
-          value={dueDate}
-          onChange={(e) => setDueDate(e.target.value)}
+          selected={dueDate}
+          onChange={(newDate) => setDueDate(newDate)}
+          placeholderText="Select a date"
+          dateFormat="dd/MM/yyyy"
+          isClearable
         />
       </div>
       <button type="submit" className="add-btn">
