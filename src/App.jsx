@@ -1,66 +1,3 @@
-// import { useState, useEffect } from "react";
-// import AppName from "./components/AppName";
-// import AddTodo from "./Components/AddTodo";
-// import TodoItems from "./Components/TodoItems";
-// import WelcomeMessage from "./Components/WelcomeMsg";
-// import "./App.css";
-
-// function App() {
-//   const [todoItems, setTodoItems] = useState(() => {
-//     return JSON.parse(localStorage.getItem("todoItems")) || [];
-//   });
-
-//   useEffect(() => {
-//     localStorage.setItem("todoItems", JSON.stringify(todoItems));
-//   }, [todoItems]);
-
-//   const handleNewItem = (itemName, itemDueDate) => {
-//     setTodoItems((currValue) => [
-//       ...currValue,
-//       { name: itemName, dueDate: itemDueDate },
-//     ]);
-//   };
-
-//   const handleDeleteItem = (todoItemName) => {
-//     const newTodoItems = todoItems.filter(
-//       (item) => item.name !== todoItemName
-//     );
-//     setTodoItems(newTodoItems);
-//   };
-
-//   const handleClearAll = () => {
-//     setTodoItems([]);
-//     localStorage.removeItem("todoItems");
-//   };
-
-//   return (
-//     <div className="app-wrapper">
-//       <header className="app-header">
-//         <AppName />
-//       </header>
-
-//       <main className="app-main">
-//         <AddTodo onNewItem={handleNewItem} />
-
-//         {todoItems.length === 0 ? (
-//           <WelcomeMessage />
-//         ) : (
-//           <>
-//             <TodoItems
-//               todoItems={todoItems}
-//               onDeleteClick={handleDeleteItem}
-//             />
-//             <button className="clear-btn" onClick={handleClearAll}>
-//               Clear All
-//             </button>
-//           </>
-//         )}
-//       </main>
-//     </div>
-//   );
-// }
-
-// export default App;
 import { useState, useEffect } from "react";
 import Particles from "react-tsparticles";
 import AppName from "./components/AppName";
@@ -96,7 +33,6 @@ function App() {
 
   return (
     <>
-      {/* Particles covering the entire body */}
       <Particles
         id="tsparticles"
         options={{
@@ -145,7 +81,6 @@ function App() {
         }}
       />
 
-      {/* App content */}
       <div className="app-wrapper">
         <header className="app-header">
           <AppName />
