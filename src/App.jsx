@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Particles from "react-tsparticles";
-import AppName from "./components/AppName";
+import AppName from "./components/AppName.jsx";
 import AddTodo from "./Components/AddTodo";
 import TodoItems from "./Components/TodoItems";
 import WelcomeMessage from "./Components/WelcomeMsg";
