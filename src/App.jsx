@@ -14,12 +14,13 @@ function App() {
     localStorage.setItem("todoItems", JSON.stringify(todoItems));
   }, [todoItems]);
 
-  const handleNewItem = (itemName, itemDueDate) => {
-    setTodoItems((currValue) => [
-      ...currValue,
-      { name: itemName, dueDate: itemDueDate },
-    ]);
-  };
+ const handleNewItem = (itemName, itemDueDate) => {
+  setTodoItems((currValue) => [
+    { name: itemName, dueDate: itemDueDate }, // new task first
+    ...currValue,                             // then old tasks
+  ]);
+};
+
 
   const handleDeleteItem = (todoItemName) => {
     setTodoItems(todoItems.filter((item) => item.name !== todoItemName));

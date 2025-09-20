@@ -31,18 +31,16 @@ body {
     #003045,
     #4f003f,
     #01353d,
-    #000000,
+    #1d1c1c,
     #1c1f2a
   );
   background-size: 600% 600%; 
-  animation: gradientMove 15s linear infinite;
+  animation: gradientMove 40s linear infinite;
   display: flex;
   flex-direction: column;
   gap: 20px;
   padding: 20px;
 }
-
-
 
 @keyframes gradientMove {
   0% { background-position: 0% 50%; }
@@ -50,16 +48,18 @@ body {
   100% { background-position: 0% 50%; }
 }
 
+
+
+/* Optional: smooth text and particle placement */
 .appName {
   font-size: 42px;
   font-weight: 800;
-  color: #ffffff; 
+  color: #ffffff;
   text-align: center;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.5); 
+  text-shadow: 0 2px 6px rgba(0,0,0,0.5);
   margin: 10px 0;
   padding: 10px 0;
 }
-
 #tsparticles {
   position: fixed;
   top: 0;
@@ -124,6 +124,14 @@ body {
   box-shadow: 0 6px 20px rgba(26, 188, 156, 0.6);
 }
 
+.add-btn, .delete-btn, .clear-btn {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.add-btn:active, .delete-btn:active, .clear-btn:active {
+  transform: scale(0.95);
+}
+
 .todo-items {
   display: flex;
   flex-direction: column;
@@ -148,13 +156,12 @@ body {
 }
 
 .todo-name {
-  font-size: 15px;
-   color: #333;        
-  font-weight: 500; 
+  font-size: 16px;
+  font-weight: 600; 
+  align-self: center;
   color: #222;
 }
 
-/* Match DatePicker input to task input */
 .todo-date {
   padding: 10px 14px;
   border: 1px solid #ddd;
@@ -166,18 +173,8 @@ body {
   box-sizing: border-box;
 }
 
-/* Placeholder color */
 .todo-date::placeholder {
   color: #888;
-}
-
-/* Responsive adjustments */
-@media (max-width: 650px) {
-  .todo-date {
-    font-size: 14px;
-    padding: 8px 10px;
-    width: 100%;
-  }
 }
 
 
@@ -228,6 +225,11 @@ body {
   color: #555;
 }
 
+.todo-row .todo-name,
+.todo-row .todo-due {
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
 .todo-row:nth-child(1n) {
   background: linear-gradient(135deg, rgba(106,130,251,0.15) 0%, rgba(252,92,125,0.15) 100%);
   color: #222;
@@ -254,10 +256,14 @@ body {
 }
 
 @media (max-width: 768px) {
-  /* .inputs-group,
-  .todo-left {
-    width: 400px;
-  } */
+ .app-wrapper {
+    padding: 15px;
+    background-size: 300% 300%; /* keep all colors */
+  }
+   .app-wrapper {
+    animation: gradientMove 13s linear infinite; /* faster than 30s */
+  }
+
 
   .add-todo-form input,
   .todo-name,
@@ -299,7 +305,7 @@ body {
   }
 
   .add-btn {
-    width: 50%;
+    width: 40%;
     font-size: 14px;
     padding: 8px 10px;
   }
@@ -337,8 +343,9 @@ body {
   }
 
   .delete-btn {
-    width: 50%;
+    width: 40%;
     font-size: 13px;
     padding: 6px 8px;
   }
 }
+

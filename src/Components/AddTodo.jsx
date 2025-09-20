@@ -1,5 +1,5 @@
 import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css"; // <-- this is required
+import "react-datepicker/dist/react-datepicker.css"; // required
 
 import { useState } from "react";
 
@@ -12,7 +12,7 @@ export default function AddTodo({ onNewItem }) {
     if (!name.trim()) return;
     onNewItem(name.trim(), dueDate || null);
     setName("");
-    setDueDate("");
+    setDueDate(null); // ✅ reset to null, not empty string
   };
 
   return (
