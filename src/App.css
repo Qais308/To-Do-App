@@ -1,0 +1,326 @@
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;             /* remove default margin */
+  min-height: 100vh;     /* full screen height */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;    /* prevent horizontal scroll */
+}
+
+
+.msg {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 50px;
+    font-weight: 600;
+}
+
+.app-wrapper {
+  width: 100vw;         /* full viewport width */
+  min-height: 100vh;    /* full viewport height */
+  background: linear-gradient(
+   -45deg,
+      #490106,
+    #165b72,
+    #003045,
+    #4f003f,
+    #01353d,
+    #000000,
+    #1c1f2a
+  );
+  background-size: 600% 600%; 
+  animation: gradientMove 15s linear infinite;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+/* App Name / Title Enhancements */
+.appName {
+  font-size: 42px;
+  font-weight: 800;
+  color: #ffffff; 
+  text-align: center;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.5); /* makes text pop */
+  margin: 10px 0;
+  padding: 10px 0;
+}
+
+
+/* Particles Overlay Positioning */
+#tsparticles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* stays behind your content */
+}
+
+
+/* Main content */
+.app-main {
+  width: 90%;
+  background: rgba(255,255,255,0.95); /* was solid #ffffff */
+  padding: 20px 30px;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ---------- AddTodo ---------- */
+.add-todo-form {
+  display: grid;
+  grid-template-columns: 1fr auto; /* inputs | add button */
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+}
+
+.inputs-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* task | date */
+  gap: 10px;
+  width: 100%;
+}
+
+.add-todo-form input {
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  min-width: 0;
+  color: #222;         /* dark, readable text */
+  font-weight: 500; 
+}
+
+/* Add Button – Dark Gradient */
+.add-btn {
+  padding: 10px 18px;
+  background: linear-gradient(135deg, #1abc9c, #16a085);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  box-shadow: 0 4px 15px rgba(26, 188, 156, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.add-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(26, 188, 156, 0.6);
+}
+
+/* ---------- TodoItems ---------- */
+.todo-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.todo-row {
+  display: grid;
+  grid-template-columns: 1fr auto; /* task/date | delete */
+  gap: 12px;
+  align-items: center;
+  background: #f9f9f9;
+  padding: 12px 16px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.todo-left {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* task | date */
+  gap: 10px;
+}
+
+.todo-name {
+  font-size: 15px;
+   color: #333;         /* darker than #666 */
+  font-weight: 500; 
+  color: #222;
+}
+
+.todo-due {
+  font-size: 13px;
+  color: #222;       /* darker than #666 */
+  font-weight: 500; 
+  padding: 10px;
+}
+
+.delete-btn {
+  padding: 8px 12px;
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.delete-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(231, 76, 60, 0.6);
+}
+
+.clear-btn {
+  align-self: center;   /* this makes it full width */
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #f39c12, #d68910);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  box-shadow: 0 4px 15px rgba(243, 156, 18, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.clear-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(243, 156, 18, 0.6);
+}
+/* Welcome message */
+.welcome-msg {
+  font-size: 16px;
+  color: #555;
+}
+/* ---------- TodoItems Very Faded Gradient Backgrounds ---------- */
+.todo-row:nth-child(1n) {
+  background: linear-gradient(135deg, rgba(106,130,251,0.15) 0%, rgba(252,92,125,0.15) 100%);
+  color: #222;
+}
+
+.todo-row:nth-child(2n) {
+  background: linear-gradient(135deg, rgba(66,230,149,0.15) 0%, rgba(59,178,184,0.15) 100%);
+  color: #222;
+}
+
+.todo-row:nth-child(3n) {
+  background: linear-gradient(135deg, rgba(247,151,30,0.15) 0%, rgba(255,210,0,0.15) 100%);
+  color: #222;
+}
+
+.todo-row:nth-child(4n) {
+  background: linear-gradient(135deg, rgba(255,117,140,0.15) 0%, rgba(255,126,179,0.15) 100%);
+  color: #222;
+}
+
+.todo-row:nth-child(5n) {
+  background: linear-gradient(135deg, rgba(67,206,162,0.15) 0%, rgba(24,90,157,0.15) 100%);
+  color: #222;
+}
+
+
+/* ---------- Responsive scaling (no layout change) ---------- */
+
+/* Tablet (<=768px) */
+@media (max-width: 768px) {
+  .inputs-group,
+  .todo-left {
+    width: 400px;
+  }
+
+  .add-todo-form input,
+  .todo-name,
+  .todo-due,
+  .add-btn,
+  .delete-btn,
+  .clear-btn {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+}
+
+/* Mobile layout (<=600px) */
+@media (max-width: 650px) {
+  /* Form layout */
+  .add-todo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .inputs-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .add-todo-form input {
+    width: 100%;
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  .add-btn {
+    width: 50%;
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  /* Task list */
+  .todo-items {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .todo-row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .todo-left {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+  }
+
+  .todo-name {
+    font-size: 14px;
+  }
+
+  .todo-due {
+    font-size: 12px;
+    color: #777;
+  }
+
+  .delete-btn {
+    width: 50%;
+    font-size: 13px;
+    padding: 6px 8px;
+  }
+}
