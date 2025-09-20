@@ -14,7 +14,7 @@ It allows users to manage tasks easily with due dates and local storage support.
 
 ## 🚀 Live Demo
 
-[Click here to see the live app](todo-app-react-j-s.netlify.app)
+[Click here to see the live app](https://todo-app-react-j-s.netlify.app/)
 
 ## 📦 Technologies Used
 
