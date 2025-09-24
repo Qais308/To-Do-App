@@ -16,8 +16,8 @@ function App() {
 
  const handleNewItem = (itemName, itemDueDate) => {
   setTodoItems((currValue) => [
-    { name: itemName, dueDate: itemDueDate }, // new task first
-    ...currValue,                             // then old tasks
+    { name: itemName, dueDate: itemDueDate }, 
+    ...currValue,                             
   ]);
 };
 

@@ -31,7 +31,7 @@ body {
     #003045,
     #4f003f,
     #01353d,
-    #1d1c1c,
+    #000000,
     #1c1f2a
   );
   background-size: 600% 600%; 
@@ -48,9 +48,6 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-
-
-/* Optional: smooth text and particle placement */
 .appName {
   font-size: 42px;
   font-weight: 800;
@@ -258,10 +255,10 @@ body {
 @media (max-width: 768px) {
  .app-wrapper {
     padding: 15px;
-    background-size: 300% 300%; /* keep all colors */
+    background-size: 300% 300%; 
   }
    .app-wrapper {
-    animation: gradientMove 13s linear infinite; /* faster than 30s */
+    animation: gradientMove 13s linear infinite;
   }
 
 
